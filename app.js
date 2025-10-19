@@ -23,8 +23,12 @@ app.route("/employees/random").get((req, res) => {
 });
 
 app.route("/employees/:id").get((req, res) => {
+  //   const { tempId } = req.params;
   const { id } = req.params;
-  const employee = employees[id];
+  //   const tempId = tempId + 1;
+  //   console.log(tempId);
+  console.log(id);
+  const employee = employees[id - 1];
 
   if (!employee) {
     return res.status(404).send("There is no employee with that id");
